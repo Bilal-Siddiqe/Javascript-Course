@@ -6,17 +6,13 @@
 // we can change that information later
 
 // declare a variable 
-
 var firstName = "Bilal";
 
 // use a variable 
 console.log(firstName);
 
-
-
 // change value 
 var firstName = "Bilal";
-
 console.log(firstName);
 
 
