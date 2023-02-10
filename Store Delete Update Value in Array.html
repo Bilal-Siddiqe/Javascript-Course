@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div class="container m-5 p-5 border border-danger border-2">
+        <input type="text" id="user1" placeholder="Index number 0">
+        <br>
+        <br>
+        <input type="text" id="user2" placeholder="Index number 1">
+        <br>
+        <br>
+        <input type="text" id="user3" placeholder="Index number 2">
+        <br>
+        <div class="contianer mt-5">
+            <button class="btn btn-primary" id="btnC" onclick="store()">Store</button>
+            <button class="btn btn-danger" id="btnD" onclick="delt()">Delete</button>
+            <button class="btn btn-success" id="btnU" onclick="updt()">Update</button>
+        </div>
+
+
+
+        <div class="container text-center border border-danger border-2 mt-5">
+            <h1 class="Display-1">Result</h1>
+            <h1 id="result1">Not Assign</h1>
+            <h1 id="result2">Not Assign</h1>
+            <h1 id="result3">Not Assign</h1>
+        </div>
+    </div>
+
+    <!-- <h1 id="hd1"></h1>
+    <button onclick="btn()">click me</button> -->
+
+    <script>
+
+        //     function btn()
+        //     {
+        //     let myHeading = document.getElementById("hd1");
+        //     myHeading.innerHTML ="Heloo"   
+        //     myHeading.style.color = "red"
+        //     myHeading.style.fontSize= "50px"
+        // }
+
+        let myArry = new Array();
+
+
+        function store() {
+            myArry[0] = document.getElementById("user1").value;
+            myArry[1] = document.getElementById("user2").value;
+            myArry[2] = document.getElementById("user3").value;
+            document.getElementById("user1").value = ""
+            document.getElementById("user2").value = ""
+            document.getElementById("user3").value = ""
+
+            document.getElementById("result1").innerHTML = myArry[0]
+            document.getElementById("result2").innerHTML = myArry[1]
+            document.getElementById("result3").innerHTML = myArry[2]
+        }
+
+        function delt() {
+            let user = prompt("Enter Index You want to delte")
+            delete myArry[user];
+            if (user == 0) {
+                document.getElementById("result1").style.color = "red"
+            }
+            else if (user == 1) {
+                document.getElementById("result2").style.color = "red"
+            }
+            else if (user == 2) {
+                document.getElementById("result3").style.color = "red"
+            }
+            else{
+                console.log("invalid Index")
+            }
+
+        }
+        function updt() {
+            let user = prompt("Enter Index You want to update")
+            let user_set = prompt("Enter Value")
+            myArry[user] = user_set
+            console.log(myArry + "Updated")
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
